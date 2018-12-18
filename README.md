@@ -10,18 +10,37 @@ Rossmann公司在7个欧洲国家拥有超过3000家药店。Rossmann的经理�
 为解决此问题，需要先对历史销售数据进行探索性数据分析(EDA)，处理异常值，发现潜在结构；提取合适的特征，建立预测模型；对模型进行训练，获得模型较优参数，提高预测准确性。
 
 
-问题陈述
-(approx. 1 paragraph)
+### **问题陈述**
+
+为Rossmann公司的1115家德国药店建立预测未来6周的销售的模型。该任务是一个回归预测类问题，即根据现有的历史数据：各药店历史日期中的销售、药店规模、促销方案、假期安排等等数据，进行特征分析以及预测目标分析。从历史数据合理划分训练集和验证集，使用试GBDT类模型，例如xgboost、lightgbm等模型预测未来6周的销售情况。
 
 
 
-In this section, clearly describe the problem that is to be solved. The problem described should be well defined and should have at least one relevant potential solution. Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
+### **数据集和输入**
 
+- 文档
+train.csv - 包含销售的历史数据
+test.csv - 无销售的历史数据，用于输入模型后得出预测值，与实际销售比较计算准确率
+sample_submission.csv - 正确提交的数据格式
+store.csv - 关于商店的补充信息（包含商店规模、促销方案与时间等信息）
 
-Datasets and Inputs
-(approx. 2-3 paragraphs)
+- 文档字段说明
 
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+Id - an Id that represents a (Store, Date) duple within the test set
+Store - 每个药店的唯一序号
+Sales - 每个已知日期的药店的周转(turnover) (目标预测值)
+Customers - 已知日期的客户量
+Open - 药店是否营业的标示符: 0 = 不营业, 1 = 营业
+StateHoliday - 表示州假日。 通常情况下，除了少数例外，所有商店都会在州假期关闭. 所有的学校在公共假日和周末都是close的。 a = public holiday, b = Easter holiday, c = Christmas, 0 = None
+SchoolHoliday - 表明（商店，日期）是否受到公立学校关闭的影响
+StoreType - 区分4种不同的商店规模: a, b, c, d
+Assortment - 描述了一个分类级别: a = basic, b = extra, c = extended
+CompetitionDistance - 距离最近的竞争对手商店的距离
+CompetitionOpenSince[Month/Year] - 距离最近的竞争对手开业的时间（月/年）
+Promo - 表示当天该药店是否在进行促销活动
+Promo2 - 表示一些药店持续的促销活动: 0 = 药店未参与, 1 = 药店正在参与
+Promo2Since[Year/Week] - 描述商店开始参与持续促销活动的年份和日历周
+PromoInterval - 描述持续促销活动，启动的连续间隔，以促销月份命名 E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, November of any given year for that store
 
 Solution Statement
 (approx. 1 paragraph)
