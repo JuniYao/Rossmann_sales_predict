@@ -26,20 +26,20 @@ store.csv - 关于商店的补充信息（包含商店规模、促销方案与�
 
 - 文档字段说明
 
-Id - an Id that represents a (Store, Date) duple within the test set
-Store - 每个药店的唯一序号
-Sales - 每个已知日期的药店的周转(turnover) (目标预测值)
-Customers - 已知日期的客户量
-Open - 药店是否营业的标示符: 0 = 不营业, 1 = 营业
-StateHoliday - 表示州假日。 通常情况下，除了少数例外，所有商店都会在州假期关闭. 所有的学校在公共假日和周末都是close的。 a = public holiday, b = Easter holiday, c = Christmas, 0 = None
-SchoolHoliday - 表明（商店，日期）是否受到公立学校关闭的影响
-StoreType - 区分4种不同的商店规模: a, b, c, d
-Assortment - 描述了一个分类级别: a = basic, b = extra, c = extended
-CompetitionDistance - 距离最近的竞争对手商店的距离
-CompetitionOpenSince[Month/Year] - 距离最近的竞争对手开业的时间（月/年）
-Promo - 表示当天该药店是否在进行促销活动
-Promo2 - 表示一些药店持续的促销活动: 0 = 药店未参与, 1 = 药店正在参与
-Promo2Since[Year/Week] - 描述商店开始参与持续促销活动的年份和日历周
+Id - 每个日期的每个药店的识别序号
+Store - 每个药店的唯一序号  
+Sales - 每个已知日期的药店的周转(turnover) (目标预测值)  
+Customers - 已知日期的客户量  
+Open - 药店是否营业的标示符: 0 = 不营业, 1 = 营业  
+StateHoliday - 表示州假日。 通常情况下，除了少数例外，所有商店都会在州假期关闭. 所有的学校在公共假日和周末都是close的。 a = public holiday, b =Easter holiday, c = Christmas, 0 = None  
+SchoolHoliday - 表明（商店，日期）是否受到公立学校关闭的影响  
+StoreType - 区分4种不同的商店规模: a, b, c, d  
+Assortment - 描述了一个分类级别: a = basic, b = extra, c = extended  
+CompetitionDistance - 距离最近的竞争对手商店的距离  
+CompetitionOpenSince[Month/Year] - 距离最近的竞争对手开业的时间（月/年）  
+Promo - 表示当天该药店是否在进行促销活动  
+Promo2 - 表示一些药店持续的促销活动: 0 = 药店未参与, 1 = 药店正在参与  
+Promo2Since[Year/Week] - 描述商店开始参与持续促销活动的年份和日历周  
 PromoInterval - 描述持续促销活动，启动的连续间隔，以促销月份命名 E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, November of any given year for that store
 
 Solution Statement
