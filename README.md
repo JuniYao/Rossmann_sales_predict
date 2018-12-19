@@ -41,10 +41,12 @@ Promo2 - 表示一些药店持续的促销活动: 0 = 药店未参与, 1 = 药�
 Promo2Since[Year/Week] - 描述商店开始参与持续促销活动的年份和日历周  
 PromoInterval - 描述持续促销活动，启动的连续间隔，以促销月份命名 E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, November of any given year for that store
 
-Solution Statement
-(approx. 1 paragraph)
+### **解决方案**
 
-In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
+1.探索数据。发现并处理异常以及空缺等数值；  
+2.分析数据相关性。根据基础数据，分析每个药店的销量与日期、节假日、促销等客观因素之间的相互关系，根据相互关系产生必要的新特征；  
+3.用历史数据训练XGBoost模型，确认最优模型参数；
+4.用模型预测未来6周的销量。
 
 Benchmark Model
 (approximately 1-2 paragraphs)
