@@ -64,8 +64,9 @@ params = {"objective": "reg:linear",
 
 用XGBoost 模型递归地构建二叉决策树的过程，基于训练数据集生成决策树，使用最小二乘偏差（LSD）或最小绝对偏差（LAD）来获取最优分裂属性；用验证数据集对已生成的树进行剪枝并选择最优子树，这时损失函数最小作为剪枝的标准。
 
-Evaluation Metrics
-(approx. 1-2 paragraphs)
+### **评估指标**
+
+XGBoost 模型对应的数学模型可以表示为：
 
 In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
 
