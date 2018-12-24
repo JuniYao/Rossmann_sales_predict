@@ -65,14 +65,39 @@ params = {"objective": "reg:linear",
 用XGBoost 模型递归地构建二叉决策树的过程，基于训练数据集生成决策树，使用最小二乘偏差（LSD）或最小绝对偏差（LAD）来获取最优分裂属性；用验证数据集对已生成的树进行剪枝并选择最优子树，这时损失函数最小作为剪枝的标准。
 
 ### **评估指标**
+https://www.jianshu.com/p/7467e616f227
 
 XGBoost 模型对应的数学模型可以表示为：
 
 In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
 
-Project Design
-(approx. 1 page)
+### **项目设计**
+https://blog.csdn.net/onepiecehuiyu/article/details/51628986
+- 数据可视化分析
 
+- 数据特征处理
+1. "Open"为空赋值为1，默认所有无Open状态的Store均为营业状态；  
+2. train.csv训练集当中只看open为1且sales>0的子集记录；  
+3. 合并store.csv和train.csv&test.csv,在训练集和预测集上增加store状态明细，扩张特征；  
+4. 所有空值填0；  
+5. 对分类向量'StoreType', 'Assortment', 'StateHoliday'中将0abcd转换成数值01234；  
+6. 从日期中抽出Year, Month, Day, DOW(Day of Week), WOY(Week of Year)；
+7. 创建竞争对手开店月数，优惠月数，每条记录的所处月份是否是优惠月，作为新的特征向量。
+
+- 建立模型  
+1. 选择模型 XGBoost 模型   
+2. 参数设定：  
+params = {"objective": "reg:linear",  
+          "booster" : "gbtree",  
+          "eta": 0.3,  
+          "max_depth": 10,  
+          "subsample": 0.9,  
+          "colsample_bytree": 0.7,  
+          "silent": 1,  
+          "seed": 1301  
+          }  
+ 3.拆分训练集，取其中10%数据作为验证集，验证模型预测准确率情况  
+ 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
 Before submitting your proposal, ask yourself. . .
