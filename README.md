@@ -51,7 +51,7 @@ PromoInterval - 描述持续促销活动，启动的连续间隔，以促销月�
 ### **基准模型**
 
 准备使用回归模型：XGBoost 模型    
-参数设定：
+参数设定：  
 params = {"objective": "reg:linear",  
           "booster" : "gbtree",  
           "eta": 0.3,  
