@@ -48,10 +48,21 @@ PromoInterval - 描述持续促销活动，启动的连续间隔，以促销月�
 3.用历史数据训练XGBoost模型，确认最优模型参数；
 4.用模型预测未来6周的销量。
 
-Benchmark Model
-(approximately 1-2 paragraphs)
+### **基准模型**
 
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
+准备使用回归模型：XGBoost 模型    
+参数设定：
+params = {"objective": "reg:linear",
+          "booster" : "gbtree",
+          "eta": 0.3,
+          "max_depth": 10,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "silent": 1,
+          "seed": 1301
+          }
+
+用XGBoost 模型递归地构建二叉决策树的过程，基于训练数据集生成决策树，使用最小二乘偏差（LSD）或最小绝对偏差（LAD）来获取最优分裂属性；用验证数据集对已生成的树进行剪枝并选择最优子树，这时损失函数最小作为剪枝的标准。
 
 Evaluation Metrics
 (approx. 1-2 paragraphs)
