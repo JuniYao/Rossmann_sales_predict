@@ -86,6 +86,7 @@ https://blog.csdn.net/onepiecehuiyu/article/details/51628986
 
 - 建立模型  
 1. 选择模型 XGBoost 模型   
+
 2. 参数设定：  
 params = {"objective": "reg:linear",  
           "booster" : "gbtree",  
@@ -96,14 +97,6 @@ params = {"objective": "reg:linear",
           "silent": 1,  
           "seed": 1301  
           }  
- 3.拆分训练集，取其中10%数据作为验证集，验证模型预测准确率情况  
+ 3. 拆分训练集，取其中10%数据作为验证集，验证模型预测准确率情况  
  
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
-
-Before submitting your proposal, ask yourself. . .
-
-Does the proposal you have written follow a well-organized structure similar to that of the project template?
-Is each section (particularly Solution Statement and Project Design) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-Would the intended audience of your project be able to understand your proposal?
-Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-Are all the resources used for this project correctly cited and referenced?
+ 4. 用训练完成的模型预测测试集，获得预测值。
