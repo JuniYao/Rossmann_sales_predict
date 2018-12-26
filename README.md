@@ -67,9 +67,6 @@ params = {"objective": "reg:linear",
 ### **评估指标**
 https://www.jianshu.com/p/7467e616f227
 
-XGBoost 模型对应的数学模型可以表示为：
-
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
 
 ### **项目设计**
 https://blog.csdn.net/onepiecehuiyu/article/details/51628986
